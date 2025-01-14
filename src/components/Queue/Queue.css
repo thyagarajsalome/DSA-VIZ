@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: white;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.queue-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.queue-item {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.queue-item.front {
+  background-color: #ffe5e5;
+  border-color: #ff4c4c;
+}
+
+.queue-item.rear {
+  background-color: #e6ffe5;
+  border-color: #28a745;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.button-container input {
+  padding: 10px;
+  width: 150px;
+  margin-right: 10px;
+}
+
+.button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.enqueue-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.dequeue-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.reset-button {
+  background-color: #ffc107;
+  color: white;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-fail {
+  background-color: #f8d7da;
+  color: #721c24;
+}

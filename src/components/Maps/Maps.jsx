@@ -29,12 +29,6 @@ const Maps = () => {
               setMap(updatedMap);
             }}
           />
-          <button
-            className="button delete-button"
-            onClick={() => deleteEntry(key)}
-          >
-            Delete
-          </button>
         </div>
       );
     });
