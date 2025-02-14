@@ -1,23 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const LinkedList = () => {
   const [linkedList, setLinkedList] = useState({ head: null });
   const [newValue, setNewValue] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
+  const nodeIdRef = useRef(0);
 
-  const Node = (data) => ({ data, next: null });
+  // Create a node with a unique id
+  const Node = (data) => ({ id: nodeIdRef.current++, data, next: null });
+
+  // Helper to deep clone the linked list starting from a given node
+  const cloneList = (node) => {
+    if (!node) return null;
+    return { id: node.id, data: node.data, next: cloneList(node.next) };
+  };
 
   const appendNode = () => {
     if (newValue === "") return;
-
     const newNode = Node(Number(newValue));
+
     setLinkedList((prev) => {
+      // If the list is empty, set head to the new node.
       if (!prev.head) return { head: newNode };
 
-      let current = prev.head;
-      while (current.next) current = current.next;
+      // Clone the current list to avoid direct mutation.
+      const newHead = cloneList(prev.head);
+      let current = newHead;
+      while (current.next) {
+        current = current.next;
+      }
       current.next = newNode;
-      return { ...prev };
+      return { head: newHead };
     });
 
     setAlertMessage(`Appended ${newValue} to the linked list.`);
@@ -26,21 +39,27 @@ const LinkedList = () => {
 
   const removeNode = () => {
     if (newValue === "") return;
-
     const valueToRemove = Number(newValue);
+
     setLinkedList((prev) => {
       if (!prev.head) return prev;
-      if (prev.head.data === valueToRemove) return { head: prev.head.next };
 
-      let current = prev.head;
+      // Special case: if head is the node to remove.
+      if (prev.head.data === valueToRemove) {
+        return { head: cloneList(prev.head.next) };
+      }
+
+      // Clone the list so we don’t mutate the original.
+      const newHead = cloneList(prev.head);
+      let current = newHead;
       while (current.next) {
         if (current.next.data === valueToRemove) {
           current.next = current.next.next;
-          return { ...prev };
+          return { head: newHead };
         }
         current = current.next;
       }
-      return prev;
+      return prev; // No node found; state remains the same.
     });
 
     setAlertMessage(`Removed ${newValue} from the linked list.`);
@@ -57,7 +76,7 @@ const LinkedList = () => {
     let current = linkedList.head;
     while (current) {
       items.push(
-        <React.Fragment key={current.data}>
+        <React.Fragment key={current.id}>
           <div className="list-item">{current.data}</div>
           {current.next && <div className="arrow" />}
         </React.Fragment>
