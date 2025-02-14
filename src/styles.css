@@ -9,13 +9,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* App Container */
+/* App Container & Sidebar */
 .app-container {
   display: flex;
   flex-direction: row;
 }
 
-/* Sidebar Styles */
 .sidebar {
   background: #333;
   color: #fff;
@@ -56,7 +55,7 @@ body {
   text-decoration: none;
 }
 
-/* Content Styles */
+/* Content */
 .content {
   flex: 1;
   margin-left: 0;
@@ -83,8 +82,9 @@ body {
   }
 }
 
-/* Card Styles */
-.card {
+/* Card & Container Styles */
+.card,
+.container {
   background: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -92,7 +92,9 @@ body {
   margin-bottom: 40px;
 }
 
-.card .title {
+.card .title,
+.container .title,
+.container h2 {
   font-size: 1.5em;
   margin-bottom: 15px;
   font-weight: bold;
@@ -101,7 +103,8 @@ body {
 
 /* Input & Button Containers */
 .input-container,
-.button-container {
+.button-container,
+.input-group {
   margin-top: 15px;
   display: flex;
   gap: 10px;
@@ -109,7 +112,8 @@ body {
 }
 
 .input-container input,
-.button-container input {
+.button-container input,
+.input-group input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -117,15 +121,21 @@ body {
 }
 
 /* Buttons */
-.button {
+button {
   padding: 8px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.add-button {
-  background: #4caf50;
+.add-button,
+.append-button,
+.enqueue-button,
+.push-button,
+.add,
+.search,
+.reset {
+  background: #2196f3;
   color: #fff;
 }
 
@@ -141,16 +151,13 @@ body {
   color: #fff;
 }
 
-.append-button,
-.enqueue-button,
-.push-button {
-  background: #2196f3;
-  color: #fff;
-}
-
 .search-button {
   background: #ff9800;
   color: #fff;
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 /* Array Visualization */
@@ -291,15 +298,6 @@ body {
 }
 
 /* Tag & Track Components */
-.container {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
 .tags-display,
 .cart-display {
   margin-top: 15px;
@@ -314,4 +312,125 @@ body {
   background: #e0e0e0;
   padding: 5px 10px;
   border-radius: 4px;
+}
+
+/* AVL Tree Visualization specific */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Fibonacci Visualization */
+.container h2 {
+  text-align: center;
+}
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.steps-container {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+.step-text {
+  margin: 5px 0;
+}
+.retrieved {
+  color: #28a745;
+}
+.base {
+  color: #007bff;
+}
+.calculated {
+  color: #6f42c1;
+}
+
+/* Graph Visualization */
+.container .section {
+  margin-bottom: 20px;
+}
+.container .section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Hash Table Visualization */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.hash-table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.bucket {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+.bucket.selected {
+  background-color: #dbeafe;
+}
+.bucket-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.bucket ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.bucket li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+.remove-item {
+  color: #ef4444;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Min Heap Visualization */
+.heap-node {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Factorial Visualization */
+.step-card {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.bg-blue {
+  background-color: #e0f7fa;
+}
+.bg-green {
+  background-color: #d4edda;
 }

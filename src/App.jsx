@@ -10,6 +10,13 @@ import StackVis from "./components/StackVis";
 import Tag from "./components/Tag";
 import Track from "./components/Track";
 
+import AVLTreeVisualization from "./components/AVLTreeVisualization";
+import FibonacciVisualization from "./components/FibonacciVisualization";
+import GraphVisualization from "./components/GraphVisualization";
+import HashTableVisualization from "./components/HashTableVisualization";
+import MinHeapVisualization from "./components/MinHeapVisualization";
+import FactorialVisualization from "./components/FactorialVisualization";
+
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -32,6 +39,36 @@ const App = () => {
     { id: "stack", title: "Stack Visualization", component: <StackVis /> },
     { id: "tag", title: "Tag Manager", component: <Tag /> },
     { id: "track", title: "Shopping Cart", component: <Track /> },
+    {
+      id: "avl",
+      title: "AVL Tree Visualization",
+      component: <AVLTreeVisualization />,
+    },
+    {
+      id: "fibonacci",
+      title: "Fibonacci Visualization",
+      component: <FibonacciVisualization />,
+    },
+    {
+      id: "graph",
+      title: "Graph Visualization",
+      component: <GraphVisualization />,
+    },
+    {
+      id: "hashtable",
+      title: "Hash Table Visualization",
+      component: <HashTableVisualization />,
+    },
+    {
+      id: "minheap",
+      title: "Min Heap Visualization",
+      component: <MinHeapVisualization />,
+    },
+    {
+      id: "factorial",
+      title: "Factorial Visualization",
+      component: <FactorialVisualization />,
+    },
   ];
 
   return (
