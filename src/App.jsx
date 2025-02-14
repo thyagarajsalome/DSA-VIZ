@@ -11,7 +11,6 @@ import Tag from "./components/Tag";
 import Track from "./components/Track";
 
 import AVLTreeVisualization from "./components/AVLTreeVisualization";
-import FibonacciVisualization from "./components/FibonacciVisualization";
 import GraphVisualization from "./components/GraphVisualization";
 import HashTableVisualization from "./components/HashTableVisualization";
 import MinHeapVisualization from "./components/MinHeapVisualization";
@@ -44,11 +43,7 @@ const App = () => {
       title: "AVL Tree Visualization",
       component: <AVLTreeVisualization />,
     },
-    {
-      id: "fibonacci",
-      title: "Fibonacci Visualization",
-      component: <FibonacciVisualization />,
-    },
+
     {
       id: "graph",
       title: "Graph Visualization",
