@@ -5,7 +5,7 @@ import ArrayVisualization from "./components/ArrayVisualization";
 import LinkedList from "./components/LinkedList";
 import Maps from "./components/Maps";
 import Queue from "./components/Queue";
-import SetVis from "./components/SetVis";
+
 import StackVis from "./components/StackVis";
 import Tag from "./components/Tag";
 import Track from "./components/Track";
@@ -34,7 +34,7 @@ const App = () => {
     },
     { id: "maps", title: "Map Visualization", component: <Maps /> },
     { id: "queue", title: "Queue Visualization", component: <Queue /> },
-    { id: "set", title: "Set Visualization", component: <SetVis /> },
+
     { id: "stack", title: "Stack Visualization", component: <StackVis /> },
     { id: "tag", title: "Tag Manager", component: <Tag /> },
     { id: "track", title: "Shopping Cart", component: <Track /> },
